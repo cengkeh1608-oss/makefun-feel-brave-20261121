@@ -10,6 +10,8 @@ const TEXT =
   "patient as breath, across the dark water. You are the keeper, not the " +
   "storm. The lamp is yours to tend; the ships will find their own way home.";
 
+// The grader sets MAKEFUN_OUTPUT_DIR; locally it falls back to /output.
+// The output dir may not exist yet in a fresh run, so create it first.
 const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
 mkdirSync(outDir, { recursive: true });
 writeFileSync(join(outDir, "entry.txt"), TEXT, "utf8");
